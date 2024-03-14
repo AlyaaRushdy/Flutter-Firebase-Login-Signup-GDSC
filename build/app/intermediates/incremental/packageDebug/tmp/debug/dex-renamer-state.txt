@@ -1,0 +1,4 @@
+#Thu Mar 14 01:56:30 EET 2024
+base.0=D\:\\GDSC\\2023-2024\\Flutter Course\\Tasks\\15 - W8 S2\\login_signup_pages\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

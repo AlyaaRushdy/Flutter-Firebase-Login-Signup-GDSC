@@ -1,0 +1,12 @@
+com.example.login_signup_pages.app-jetified-window-java-1.0.0-beta04-0 C:\Users\loyaa\.gradle\caches\transforms-3\19ff66f031cb422764b0da25d9d6bdb4\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.login_signup_pages.app-jetified-annotation-experimental-1.1.0-1 C:\Users\loyaa\.gradle\caches\transforms-3\55b58230e55ac19e11de59e32a6117b3\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.login_signup_pages.app-core-1.6.0-2 C:\Users\loyaa\.gradle\caches\transforms-3\bbbbd632898af927049fa4f571ee9e7e\transformed\core-1.6.0\res
+com.example.login_signup_pages.app-jetified-window-1.0.0-beta04-3 C:\Users\loyaa\.gradle\caches\transforms-3\d97cf3ffa6f05f8e8de8b41da1cca67f\transformed\jetified-window-1.0.0-beta04\res
+com.example.login_signup_pages.app-debug-4 D:\GDSC\2023-2024\Flutter Course\Tasks\15 - W8 S2\login_signup_pages\android\app\src\debug\res
+com.example.login_signup_pages.app-main-5 D:\GDSC\2023-2024\Flutter Course\Tasks\15 - W8 S2\login_signup_pages\android\app\src\main\res
+com.example.login_signup_pages.app-pngs-6 D:\GDSC\2023-2024\Flutter Course\Tasks\15 - W8 S2\login_signup_pages\build\app\generated\res\pngs\debug
+com.example.login_signup_pages.app-resValues-7 D:\GDSC\2023-2024\Flutter Course\Tasks\15 - W8 S2\login_signup_pages\build\app\generated\res\resValues\debug
+com.example.login_signup_pages.app-rs-8 D:\GDSC\2023-2024\Flutter Course\Tasks\15 - W8 S2\login_signup_pages\build\app\generated\res\rs\debug
+com.example.login_signup_pages.app-mergeDebugResources-9 D:\GDSC\2023-2024\Flutter Course\Tasks\15 - W8 S2\login_signup_pages\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.login_signup_pages.app-mergeDebugResources-10 D:\GDSC\2023-2024\Flutter Course\Tasks\15 - W8 S2\login_signup_pages\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.login_signup_pages.app-merged_res-11 D:\GDSC\2023-2024\Flutter Course\Tasks\15 - W8 S2\login_signup_pages\build\app\intermediates\merged_res\debug
