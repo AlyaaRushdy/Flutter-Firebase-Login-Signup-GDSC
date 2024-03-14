@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_signup_pages/widgets/text_form_field_decoration.dart';
-import 'package:login_signup_pages/widgets/label_text.dart';
+import 'package:login_signup_pages/view/widgets/text_form_field_decoration.dart';
+import 'package:login_signup_pages/view/widgets/label_text.dart';
 import '../widgets/divider_with_text.dart';
 import '../widgets/login_signup_button.dart';
 
@@ -26,6 +26,13 @@ class LogIn extends StatelessWidget {
                   //Email
                   const LabelText(text: "Email"),
                   TextFormField(
+                    validator: (String? value) {
+                      if (value!.isEmpty) {
+                        return "it must not be empty";
+                      }
+                      return null;
+                    },
+                    onSaved: (String? value) {},
                     keyboardType: TextInputType.emailAddress,
                     decoration: TextFormFieldDecoration(),
                   ),
@@ -36,6 +43,13 @@ class LogIn extends StatelessWidget {
                   //Password
                   const LabelText(text: "Password"),
                   TextFormField(
+                    validator: (String? value) {
+                      if (value!.isEmpty) {
+                        return "it must not be empty";
+                      }
+                      return null;
+                    },
+                    onSaved: (String? value) {},
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: true,
                     decoration: TextFormFieldDecoration(),

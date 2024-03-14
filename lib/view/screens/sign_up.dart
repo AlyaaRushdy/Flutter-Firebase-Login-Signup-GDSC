@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:login_signup_pages/widgets/divider_with_text.dart';
-import 'package:login_signup_pages/widgets/label_text.dart';
-import 'package:login_signup_pages/widgets/login_signup_button.dart';
-import 'package:login_signup_pages/widgets/text_form_field_decoration.dart';
+import 'package:login_signup_pages/view/widgets/divider_with_text.dart';
+import 'package:login_signup_pages/view/widgets/label_text.dart';
+import 'package:login_signup_pages/view/widgets/login_signup_button.dart';
+import 'package:login_signup_pages/view/widgets/text_form_field_decoration.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -32,6 +32,13 @@ class SignUp extends StatelessWidget {
                             children: [
                               const LabelText(text: "First Name"),
                               TextFormField(
+                                validator: (String? value) {
+                                  if (value!.isEmpty) {
+                                    return "it must not be empty";
+                                  }
+                                  return null;
+                                },
+                                onSaved: (String? value) {},
                                 keyboardType: TextInputType.name,
                                 decoration: TextFormFieldDecoration(),
                               ),
@@ -48,6 +55,13 @@ class SignUp extends StatelessWidget {
                             children: [
                               const LabelText(text: "Last Name"),
                               TextFormField(
+                                validator: (String? value) {
+                                  if (value!.isEmpty) {
+                                    return "it must not be empty";
+                                  }
+                                  return null;
+                                },
+                                onSaved: (String? value) {},
                                 keyboardType: TextInputType.name,
                                 decoration: TextFormFieldDecoration(),
                               ),
@@ -63,6 +77,13 @@ class SignUp extends StatelessWidget {
                     //Email
                     const LabelText(text: "Email"),
                     TextFormField(
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return "it must not be empty";
+                        }
+                        return null;
+                      },
+                      onSaved: (String? value) {},
                       keyboardType: TextInputType.emailAddress,
                       decoration: TextFormFieldDecoration(),
                     ),
@@ -73,6 +94,13 @@ class SignUp extends StatelessWidget {
                     //Password
                     const LabelText(text: "Password"),
                     TextFormField(
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return "it must not be empty";
+                        }
+                        return null;
+                      },
+                      onSaved: (String? value) {},
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
                       decoration: TextFormFieldDecoration(),
@@ -84,6 +112,13 @@ class SignUp extends StatelessWidget {
                     //Password
                     const LabelText(text: "Confirm password"),
                     TextFormField(
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return "it must not be empty";
+                        }
+                        return null;
+                      },
+                      onSaved: (String? value) {},
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
                       decoration: TextFormFieldDecoration(),

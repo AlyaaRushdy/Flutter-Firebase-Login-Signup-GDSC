@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_signup_pages/screens/log_in.dart';
-import 'package:login_signup_pages/screens/sign_up.dart';
+import 'package:login_signup_pages/view/screens/log_in.dart';
+import 'package:login_signup_pages/view/screens/sign_up.dart';
 
 class TabsBar extends StatelessWidget {
   const TabsBar({super.key});
