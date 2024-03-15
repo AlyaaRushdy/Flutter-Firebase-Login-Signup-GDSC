@@ -4,7 +4,7 @@ import 'package:login_signup_pages/view/widgets/text_form_field_decoration.dart'
 import 'package:login_signup_pages/view/widgets/label_text.dart';
 import 'package:login_signup_pages/view_model/auth_cubit.dart';
 import '../widgets/divider_with_text.dart';
-import '../widgets/login_signup_button.dart';
+import '../widgets/primary_button.dart';
 
 // ignore: must_be_immutable
 class LogIn extends StatelessWidget {
@@ -72,15 +72,16 @@ class LogIn extends StatelessWidget {
                   const SizedBox(height: 20.0),
 
                   //Log In Action Button
-                  LoginSignupButton(
+                  PrimaryButton(
                     text: "Log In",
                     onPressed: () {
                       _formKey.currentState!.save();
                       if (_formKey.currentState!.validate()) {
                         cubit.email = emailController.text;
                         cubit.password = passwordController.text;
-
                         cubit.signInWithEmailAndPassword(context);
+                        emailController.clear();
+                        passwordController.clear();
                       }
                     },
                   ),

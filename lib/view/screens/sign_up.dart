@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup_pages/view/widgets/divider_with_text.dart';
 import 'package:login_signup_pages/view/widgets/label_text.dart';
-import 'package:login_signup_pages/view/widgets/login_signup_button.dart';
+import 'package:login_signup_pages/view/widgets/primary_button.dart';
 import 'package:login_signup_pages/view/widgets/text_form_field_decoration.dart';
 import 'package:login_signup_pages/view_model/auth_cubit.dart';
 
@@ -149,7 +149,7 @@ class SignUp extends StatelessWidget {
                     const SizedBox(height: 20.0),
 
                     //Sign Up Action Button
-                    LoginSignupButton(
+                    PrimaryButton(
                       text: "Sign Up",
                       onPressed: () {
                         _formKey.currentState!.save();
@@ -160,6 +160,12 @@ class SignUp extends StatelessWidget {
                               "${firstNameController.text} ${lastNameController.text}";
 
                           cubit.registerWithEmailAndPassword(context);
+
+                          emailController.clear();
+                          passwordController.clear();
+                          firstNameController.clear();
+                          lastNameController.clear();
+                          passwordConfirmController.clear();
                         }
                       },
                     ),
