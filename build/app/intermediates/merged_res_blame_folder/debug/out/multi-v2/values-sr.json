@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.login_signup_pages.app-mergeDebugResources-13:/values-sr/values-sr.xml",
+            "outputFile": "com.example.login_signup_pages.app-mergeDebugResources-14:/values-sr/values-sr.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\loyaa\\.gradle\\caches\\transforms-3\\94c054f5931c837e5360b35357b32d11\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-sr\\values.xml",
+                    "source": "C:\\Users\\loyaa\\.gradle\\caches\\transforms-3\\a4bbafb918d885afcf112a8c21b52a56\\transformed\\jetified-play-services-basement-18.2.0\\res\\values-sr\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

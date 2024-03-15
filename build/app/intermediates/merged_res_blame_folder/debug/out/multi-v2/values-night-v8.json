@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.login_signup_pages.app-mergeDebugResources-13:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.login_signup_pages.app-mergeDebugResources-14:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "D:\\GDSC\\2023-2024\\Flutter Course\\Tasks\\15 - W8 S2\\login_signup_pages\\android\\app\\src\\main\\res\\values-night\\styles.xml",
