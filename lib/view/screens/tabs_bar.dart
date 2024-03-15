@@ -32,7 +32,7 @@ class TabsBar extends StatelessWidget {
             ],
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
             SignUp(),
             LogIn(),
