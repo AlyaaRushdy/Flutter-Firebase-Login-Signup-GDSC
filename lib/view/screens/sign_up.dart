@@ -133,7 +133,7 @@ class SignUp extends StatelessWidget {
                         if (value!.isEmpty) {
                           return "it must not be empty";
                         } else if (passwordConfirmController.text !=
-                            passwordController) {
+                            passwordController.text) {
                           return "doesn't match password";
                         }
                         return null;
