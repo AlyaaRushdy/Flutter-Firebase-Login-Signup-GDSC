@@ -4,11 +4,11 @@ class LoginSignupButton extends StatelessWidget {
   const LoginSignupButton({
     super.key,
     required this.text,
-    //required this.OnPressed,
+    required this.onPressed,
   });
 
   final String text;
-  //final Function OnPressed;
+  final Function onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,9 @@ class LoginSignupButton extends StatelessWidget {
         minimumSize: const Size.fromHeight(45.0),
         backgroundColor: Colors.green,
       ),
-      onPressed: () {},
-      //OnPressed(),
+      onPressed: () {
+        onPressed();
+      },
       child: Text(
         text,
         style: const TextStyle(color: Colors.white),
