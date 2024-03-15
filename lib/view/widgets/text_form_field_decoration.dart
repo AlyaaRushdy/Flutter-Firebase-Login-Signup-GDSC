@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-InputDecoration TextFormFieldDecoration() {
+InputDecoration textFormFieldDecoration() {
   return const InputDecoration(
     focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(
