@@ -16,6 +16,12 @@ class SignUpSuccessState extends AuthStates {}
 
 class SignUpErrorState extends AuthStates {}
 
+class SignOutLoadingState extends AuthStates {}
+
+class SignOutSuccessState extends AuthStates {}
+
+class SignOutErrorState extends AuthStates {}
+
 class GoogleSignInLoadingState extends AuthStates {}
 
 class GoogleSignInSuccessState extends AuthStates {}
