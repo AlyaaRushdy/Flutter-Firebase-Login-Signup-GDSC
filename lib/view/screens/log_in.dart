@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:login_signup_pages/view/widgets/google_button.dart';
 import 'package:login_signup_pages/view/widgets/text_form_field_decoration.dart';
 import 'package:login_signup_pages/view/widgets/label_text.dart';
+import 'package:login_signup_pages/view_model/auth_cubit.dart';
 import '../widgets/divider_with_text.dart';
 import '../widgets/login_signup_button.dart';
 
+// ignore: must_be_immutable
 class LogIn extends StatelessWidget {
-  const LogIn({super.key});
+  LogIn({super.key});
+
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    var cubit = AuthCubit.get(context);
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -21,6 +31,7 @@ class LogIn extends StatelessWidget {
             ),
             alignment: Alignment.center,
             child: Form(
+              key: _formKey,
               child: Column(
                 children: [
                   //Email
@@ -32,9 +43,10 @@ class LogIn extends StatelessWidget {
                       }
                       return null;
                     },
-                    onSaved: (String? value) {},
+                    controller: emailController,
+                    onSaved: (value) {},
                     keyboardType: TextInputType.emailAddress,
-                    decoration: TextFormFieldDecoration(),
+                    decoration: textFormFieldDecoration(),
                   ),
 
                   // Space
@@ -49,32 +61,34 @@ class LogIn extends StatelessWidget {
                       }
                       return null;
                     },
+                    controller: passwordController,
                     onSaved: (String? value) {},
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: true,
-                    decoration: TextFormFieldDecoration(),
+                    decoration: textFormFieldDecoration(),
                   ),
 
                   // Space
                   const SizedBox(height: 20.0),
 
                   //Log In Action Button
-                  const LoginSignupButton(text: "Log In"),
+                  LoginSignupButton(
+                    text: "Log In",
+                    onPressed: () {
+                      _formKey.currentState!.save();
+                      if (_formKey.currentState!.validate()) {
+                        cubit.email = emailController.text;
+                        cubit.password = passwordController.text;
+
+                        cubit.signInWithEmailAndPassword(context);
+                      }
+                    },
+                  ),
 
                   //divider with text
                   const DividerWithText(),
 
-                  TextButton.icon(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      "assets/images/google.png",
-                      width: 30,
-                    ),
-                    label: const Text('Login with Google'),
-                    style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all(Colors.grey),
-                    ),
-                  ),
+                  GoogleButton(formKey: _formKey, cubit: cubit),
                 ],
               ),
             ),

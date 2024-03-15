@@ -3,12 +3,24 @@ import 'package:login_signup_pages/view/widgets/divider_with_text.dart';
 import 'package:login_signup_pages/view/widgets/label_text.dart';
 import 'package:login_signup_pages/view/widgets/login_signup_button.dart';
 import 'package:login_signup_pages/view/widgets/text_form_field_decoration.dart';
+import 'package:login_signup_pages/view_model/auth_cubit.dart';
 
+import '../widgets/google_button.dart';
+
+// ignore: must_be_immutable
 class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+  SignUp({super.key});
+
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var passwordConfirmController = TextEditingController();
+  var firstNameController = TextEditingController();
+  var lastNameController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
+    var cubit = AuthCubit.get(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -21,6 +33,7 @@ class SignUp extends StatelessWidget {
               ),
               alignment: Alignment.center,
               child: Form(
+                key: _formKey,
                 child: Column(
                   children: [
                     //First and Last names
@@ -38,9 +51,10 @@ class SignUp extends StatelessWidget {
                                   }
                                   return null;
                                 },
+                                controller: firstNameController,
                                 onSaved: (String? value) {},
                                 keyboardType: TextInputType.name,
-                                decoration: TextFormFieldDecoration(),
+                                decoration: textFormFieldDecoration(),
                               ),
                             ],
                           ),
@@ -61,9 +75,10 @@ class SignUp extends StatelessWidget {
                                   }
                                   return null;
                                 },
+                                controller: lastNameController,
                                 onSaved: (String? value) {},
                                 keyboardType: TextInputType.name,
-                                decoration: TextFormFieldDecoration(),
+                                decoration: textFormFieldDecoration(),
                               ),
                             ],
                           ),
@@ -83,9 +98,10 @@ class SignUp extends StatelessWidget {
                         }
                         return null;
                       },
+                      controller: emailController,
                       onSaved: (String? value) {},
                       keyboardType: TextInputType.emailAddress,
-                      decoration: TextFormFieldDecoration(),
+                      decoration: textFormFieldDecoration(),
                     ),
 
                     // Space
@@ -100,10 +116,11 @@ class SignUp extends StatelessWidget {
                         }
                         return null;
                       },
+                      controller: passwordController,
                       onSaved: (String? value) {},
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
-                      decoration: TextFormFieldDecoration(),
+                      decoration: textFormFieldDecoration(),
                     ),
 
                     // Space
@@ -115,37 +132,42 @@ class SignUp extends StatelessWidget {
                       validator: (String? value) {
                         if (value!.isEmpty) {
                           return "it must not be empty";
+                        } else if (passwordConfirmController.text !=
+                            passwordController) {
+                          return "doesn't match password";
                         }
                         return null;
                       },
                       onSaved: (String? value) {},
+                      controller: passwordConfirmController,
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
-                      decoration: TextFormFieldDecoration(),
+                      decoration: textFormFieldDecoration(),
                     ),
 
                     // Space
                     const SizedBox(height: 20.0),
 
                     //Sign Up Action Button
-                    const LoginSignupButton(
+                    LoginSignupButton(
                       text: "Sign Up",
+                      onPressed: () {
+                        _formKey.currentState!.save();
+                        if (_formKey.currentState!.validate()) {
+                          cubit.email = emailController.text;
+                          cubit.password = passwordController.text;
+                          cubit.name =
+                              "${firstNameController.text} ${lastNameController.text}";
+
+                          cubit.registerWithEmailAndPassword(context);
+                        }
+                      },
                     ),
 
                     //divider with text
                     const DividerWithText(),
 
-                    TextButton.icon(
-                      onPressed: () {},
-                      icon: Image.asset(
-                        "assets/images/google.png",
-                        width: 30,
-                      ),
-                      label: const Text('Sign Up with Google'),
-                      style: ButtonStyle(
-                        foregroundColor: MaterialStateProperty.all(Colors.grey),
-                      ),
-                    ),
+                    GoogleButton(formKey: _formKey, cubit: cubit),
                   ],
                 ),
               ),
